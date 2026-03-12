@@ -1,32 +1,43 @@
-# Task Manager
+# Task Manager (Python)
 
-A simple **CLI-based Task Manager** written in Python to keep track of tasks with status, priority, and deadlines.
+A simple console-based Task Manager written in Python.
 
----
+This program allows you to manage tasks directly from the terminal with priorities, deadlines, and completion status.
 
 ## Features
 
-- Add, edit, delete tasks
-- Mark tasks as completed or revert to pending
-- **Priority selection** via numbers:
-  - 1 → High
-  - 2 → Medium
-  - 3 → Low
-- **Deadline input** in `YYYY-MM-DD` format with input validation
-- All tasks show **status, title, priority, and deadline**
-- Safe input handling — prevents errors from letters or incorrect numbers
+- Add tasks with title, priority (High / Medium / Low), and optional deadline.
+- Delete tasks with confirmation.
+- Mark tasks as completed.
+- Revert completed tasks back to pending.
+- Edit task title, priority, and deadline.
+- Tasks automatically sorted by priority (High → Low).
+- Input validation for numbers and dates.
+- Tasks saved in `tasks.json`.
 
----
+## Requirements
 
-## How to Use
+Python 3.x
 
-1. Run the program:
+## Installation
 
-```bash
+Clone the repository:
+
+git clone <repository-url>
+
+Enter the project folder:
+
+cd <repository-folder>
+
+Run the program:
+
 python task_manager.py
 
-	2.	Menu options:
+## Menu
 
+When running the program you will see:
+
+--- Task Manager ---
 1: Show tasks
 2: Add task
 3: Delete task
@@ -35,51 +46,22 @@ python task_manager.py
 6: Edit task
 7: Exit
 
-	3.	Adding a task:
-	•	Enter task name
-	•	Choose priority via number (1–3)
-	•	Enter deadline in YYYY-MM-DD format or leave blank
-	4.	Editing a task:
-	•	Select the task number
-	•	Change name (optional)
-	•	Choose new priority (via number)
-	•	Enter new deadline (or leave blank to keep current)
-	5.	Completing or reverting a task:
-	•	Select the task number
-	•	Confirm action (y/n)
-	•	Task list shows updated status immediately
+Select an option by entering the corresponding number.
 
-⸻
+## Notes
 
-Example
+- Only deleting a task requires confirmation.
+- Task titles must be unique.
+- Press Enter for optional values like priority or deadline.
+- Tasks are stored locally in `tasks.json`.
 
-[ ] 1. Finish homework (Priority: High, Deadline: 2026-03-20)
-[x] 2. Buy groceries (Priority: Medium, Deadline: No deadline)
+## Example tasks.json
 
-	•	[ ] → Pending
-	•	[x] → Done
-
-⸻
-
-Installation
-
-No external libraries required (standard Python 3.x).
-
-Run with:
-
-python task_manager.py
-
-
-⸻
-
-Notes
-	•	Priority defaults to Medium if invalid input is given.
-	•	Deadline defaults to No deadline if left blank or invalid.
-	•	After every action, the task list updates automatically showing all details.
-	•	Designed to be user-friendly and error-proof.
-
-⸻
-
-License
-
-This project is open-source and free to use.
+[
+  {
+    "title": "Buy groceries",
+    "done": false,
+    "priority": "High",
+    "deadline": "2026-03-15"
+  }
+]
